@@ -1,0 +1,36 @@
+
+$color-background: #e7f9fd;
+$color-water: #00ccff;
+$color-font: #333;
+$color-pink: #f47ece;
+$color-orange: #f7863e;
+$color-blue: #47eff2;
+
+html, body{
+	boder-size: border-box;
+	background-color:$color-background;
+}
+.container{
+	display:flex;
+	justify-content:center;
+	align-items:center; 
+	width: 100vw; 
+	height: 100vh;
+}
+.drop{
+	width: 150px;
+	height: 150px;
+	border-radius: 0 75px 75px 75px;
+	transform:rotate(45deg);
+	background-color: $color-water;
+	animation: drop 1s  ease-in-out alternate infinite;
+}
+
+@keyframes drop{
+	0%{
+		 transform: translate(0%, 0%) rotate(45deg);
+	}
+	100% {
+    transform: translate(0%, -40%) rotate(45deg);
+  }
+}
