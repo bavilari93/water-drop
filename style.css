@@ -79,7 +79,7 @@ li {
   0% {
     transform: translate(0%, 0%) rotate(45deg); }
   100% {
-    transform: translate(0%, -40%) rotate(45deg); } }
+    transform: translate(0%, -10%) rotate(45deg); } }
 @keyframes sleepmouth {
   0% {
     transform: rotate(45deg) scale(1); }
