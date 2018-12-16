@@ -1,4 +1,3 @@
-
 $color-background: #e7f9fd;
 $color-water: #00ccff;
 $color-font: #333;
@@ -6,31 +5,104 @@ $color-pink: #f47ece;
 $color-orange: #f7863e;
 $color-blue: #47eff2;
 
-html, body{
-	boder-size: border-box;
-	background-color:$color-background;
-}
-.container{
-	display:flex;
-	justify-content:center;
-	align-items:center; 
-	width: 100vw; 
-	height: 100vh;
-}
-.drop{
-	width: 150px;
-	height: 150px;
-	border-radius: 0 75px 75px 75px;
-	transform:rotate(45deg);
-	background-color: $color-water;
-	animation: drop 1s  ease-in-out alternate infinite;
+html,
+body {
+    boder-size: border-box;
+    background-color: $color-background;
 }
 
-@keyframes drop{
-	0%{
-		 transform: translate(0%, 0%) rotate(45deg);
-	}
-	100% {
-    transform: translate(0%, -40%) rotate(45deg);
-  }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.drop {
+    width: 150px;
+    height: 150px;
+    border-radius: 0 75px 75px 75px;
+    transform: rotate(45deg);
+    background-color: $color-water;
+    animation: drop 1s ease-in-out alternate infinite;
+}
+
+.face {
+    position: relative;
+    border-radius: 50%;
+    border: solid .2rem white;
+    width: 1.5rem;
+    height: 1rem;
+    animation: sleepmouth 1s ease-in-out alternate infinite;
+
+    margin: {
+        top: 6rem;
+        left: 5.8rem;
+    }
+}
+
+.mouth {
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        width: 2rem;
+        height: 1rem;
+        transform: rotate(-45deg);
+
+        border: {
+            radius: 50%;
+            bottom: 5px solid $color-background;
+        }
+    }
+
+    &:before {
+        left: 4.6rem;
+        top: 1.6rem;
+    }
+
+    &:after {
+        left: 1rem;
+        top: 5.4rem;
+    }
+}
+
+.water-ripple{
+   width: 100px;
+    height: 60px;
+    top:28rem;
+    list-style: none;
+    position: relative;  
+}
+ li {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: .2rem solid $color-water;
+        transform: skew(119deg, 9deg);
+
+
+    }
+
+@keyframes drop {
+    0% {
+        transform: translate(0%, 0%) rotate(45deg);
+    }
+
+    100% {
+        transform: translate(0%, -40%) rotate(45deg);
+    }
+}
+
+@keyframes sleepmouth {
+    0% {
+        transform: rotate(45deg) scale(1)
+    }
+
+    100% {
+        transform: rotate(45deg) scale(1.2);
+    }
 }

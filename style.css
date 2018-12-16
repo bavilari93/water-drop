@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   boder-size: border-box;
   background-color: #e7f9fd; }
 
@@ -15,12 +16,54 @@ html, body {
   border-radius: 0 75px 75px 75px;
   transform: rotate(45deg);
   background-color: #00ccff;
-  animation: drop 1s  ease-in-out alternate infinite; }
+  animation: drop 1s ease-in-out alternate infinite; }
+
+.face {
+  position: relative;
+  border-radius: 50%;
+  border: solid .2rem white;
+  width: 1.5rem;
+  height: 1rem;
+  animation: sleepmouth 1s ease-in-out alternate infinite;
+  margin-top: 6rem;
+  margin-left: 5.8rem; }
+
+.mouth:before, .mouth:after {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 1rem;
+  transform: rotate(-45deg);
+  border-radius: 50%;
+  border-bottom: 5px solid #e7f9fd; }
+.mouth:before {
+  left: 4.6rem;
+  top: 1.6rem; }
+.mouth:after {
+  left: 1rem;
+  top: 5.4rem; }
+
+.water-ripple {
+  width: 100px;
+  height: 60px;
+  list-style: none;
+  position: absolute; }
+  .water-ripple li {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 0.2rem solid #00ccff; }
 
 @keyframes drop {
   0% {
     transform: translate(0%, 0%) rotate(45deg); }
   100% {
     transform: translate(0%, -40%) rotate(45deg); } }
+@keyframes sleepmouth {
+  0% {
+    transform: rotate(45deg) scale(1); }
+  100% {
+    transform: rotate(45deg) scale(1.2); } }
 
 /*# sourceMappingURL=style.css.map */
